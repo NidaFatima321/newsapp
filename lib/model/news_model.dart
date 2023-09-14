@@ -53,11 +53,11 @@ class Article {
     source: Source.fromJson(json["source"]),
     author: json["author"]??"",
     title: json["title"],
-    description: json["description"],
+    description: json["description"]??"",
     url: json["url"],
     urlToImage: json["urlToImage"]??"",
     publishedAt: DateTime.parse(json["publishedAt"]),
-    content: json["content"],
+    content: json["content"]??"",
   );
 
   Map<String, dynamic> toJson() => {
@@ -82,7 +82,7 @@ class Source {
   });
 
   factory Source.fromJson(Map<String, dynamic> json) => Source(
-    id: json["id"],
+    id: json["id"]??"1",
     name: json["name"],
   );
 

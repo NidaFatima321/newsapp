@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/model/news_model.dart';
 import 'package:newsapp/view/news_page.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 class NewsWidget extends StatelessWidget {
   final Article article;
@@ -34,20 +35,25 @@ class NewsWidget extends StatelessWidget {
                 ),),
               ),
             ),
-            Text(article.content, style: TextStyle(
-              fontSize: 16,
-
-            ),),
+            // Text(article.content,
+            //   textAlign: TextAlign.justify,
+            //   style: TextStyle(
+            //   fontSize: 20,
+            //   // fontWeight: FontWeight.bold,
+            //   fontFamily: 'SourceSansPro',
+            //
+            // ),),
+            SizedBox(height:10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(article.author,style: TextStyle(
+                Text(article.author.toUpperCase(),style: TextStyle(
                   fontSize: 16,
                   color: Colors.grey,
                   fontWeight: FontWeight.bold
                 ),),
                 Text('${article.publishedAt}',style: TextStyle(
-                  color: Colors.grey,
+                  color: Colors.red,
                   fontWeight: FontWeight.bold
                 ),)
               ],
